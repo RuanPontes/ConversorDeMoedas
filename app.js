@@ -1,23 +1,21 @@
 function storeValue() {
-    var inputValue = document.getElementById("input1").value;
+    var inputValue = parseFloat(document.getElementById("input1").value);
     console.log("Valor do input: " + inputValue);
-    
+  
     var dollarValue = 5.32;
     var euroValue = 5.55;
-    var BitcoinValue = 116.900;
-    
-    var dollarResult = dollarValue * inputValue;
-    console.log("Valor dólar: " + dollarResult);
-    
-    var euroResult = euroValue * inputValue;
-    console.log("Valor euro: " + euroResult);
-
-    var BitcoinResult = BitcoinValue * inputValue;
-    console.log("Valor Bitcoin: " + BitcoinResult);
-    
+    var bitcoinValue = 116841.00
+  
+    var dollarResult = inputValue / dollarValue;
+    console.log("Valor dólar: " + dollarResult.toFixed(2));
+  
+    var euroResult = inputValue / euroValue;
+    console.log("Valor euro: " + euroResult.toFixed(2));
+  
+    var bitcoinResult = inputValue / bitcoinValue;
+    console.log("Valor Bitcoin: " + bitcoinResult.toFixed(8));
+  
     document.getElementById("ResultadoDollar").innerHTML = dollarResult.toFixed(2);
     document.getElementById("ResultadoEuro").innerHTML = euroResult.toFixed(2);
-    document.getElementById("ResultadoBitcoin").innerHTML = BitcoinResult.toFixed(3);
-    
+    document.getElementById("ResultadoBitcoin").innerHTML = bitcoinResult.toFixed(8);
   }
-  
